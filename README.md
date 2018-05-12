@@ -1,12 +1,10 @@
-[![](https://badge.imagelayers.io/uzyexe/serverspec:latest.svg)](https://imagelayers.io/?images=uzyexe/serverspec:latest 'Get your own badge on imagelayers.io')
-
-# uzyexe/serverspec [![Circle CI](https://circleci.com/gh/uzyexe/dockerfile-serverspec.svg?style=svg)](https://circleci.com/gh/uzyexe/dockerfile-serverspec)
+# lrakai/serverspec
 
 With Serverspec, you can write RSpec tests for checking your servers are configured correctly.
 
 ## Dockerfile
 
-[**Trusted Build**](https://hub.docker.com/r/uzyexe/serverspec/)
+[**Trusted Build**](https://hub.docker.com/r/lrakai/serverspec/)
 
 This Docker image is based on the [ruby:2.4.2](https://hub.docker.com/_/ruby/) base image.
 
@@ -15,7 +13,7 @@ This Docker image is based on the [ruby:2.4.2](https://hub.docker.com/_/ruby/) b
 ### Quick Start
 
 ```
-docker run --rm -v "${YOUR_SPEC_DIR}:/serverspec:ro" uzyexe/serverspec <rake_option>
+docker run --rm -v "${YOUR_SPEC_DIR}:/serverspec:ro" lrakai/serverspec <rake_option>
 ```
 
 Default `rake_option` is `-T`
@@ -31,7 +29,7 @@ Step 1. Create your serverspec directory.
 Step 2. Initialized serverspec directory.
 
 ```
-# docker run --rm -v $PWD:/serverspec:rw --entrypoint="/usr/local/bundle/bin/serverspec-init" uzyexe/serverspec
+# docker run --rm -v $PWD:/serverspec:rw --entrypoint="/usr/local/bundle/bin/serverspec-init" lrakai/serverspec
 ```
 
 Step 3. The following file is generated...
@@ -50,14 +48,14 @@ Step 3. The following file is generated...
 Step 4. Display the task list defined in the Rakefile.
 
 ```
-# docker run --rm -v $PWD:/serverspec:ro uzyexe/serverspec
+# docker run --rm -v $PWD:/serverspec:ro lrakai/serverspec
 rake spec:localhost  # Run serverspec tests to localhost
 ```
 
 Step 5. Run serverspec tests to localhost.
 
 ```
-# docker run --rm -v $PWD:/serverspec:ro uzyexe/serverspec spec:localhost
+# docker run --rm -v $PWD:/serverspec:ro lrakai/serverspec spec:localhost
 
 Port "80"
   should be listening (FAILED - 1)
@@ -101,7 +99,7 @@ If you need access to process or network interface you will need --pid="host" or
    --volume="/home/user/.ssh:/home/user/.ssh:ro" \
    --volume="/var:/var:ro" \
    --volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
-   uzyexe/serverspec <rake_option>
+   lrakai/serverspec <rake_option>
 ```
 
 --
@@ -110,7 +108,7 @@ If you need access to process or network interface you will need --pid="host" or
 
 [Getting started](http://serverspec.org/)
 
-# Authors
+# Original Author
 
 * Shuji Yamada (<uzy.exe@gmail.com>)
 
